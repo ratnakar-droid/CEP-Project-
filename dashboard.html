@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Health & Hygiene Awareness</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+<h1>Health & Hygiene Awareness</h1>
+<button onclick="toggleDark()">🌙 Dark Mode</button>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#personal">Personal Hygiene</a>
+<a href="#public">Public Hygiene</a>
+<a href="#survey">Survey</a>
+<a href="#analysis">Analysis</a>
+</nav>
+
+<section id="about">
+<h2>About Project</h2>
+<p>This IT based project spreads health awareness using digital technology.</p>
+</section>
+
+<section id="personal">
+<h2>Personal Hygiene</h2>
+<ul>
+<li>Hand Washing</li>
+<li>Daily Bath</li>
+<li>Oral Care</li>
+<li>Clean Clothes</li>
+</ul>
+</section>
+
+<section id="public">
+<h2>Public Hygiene</h2>
+<ul>
+<li>Clean Environment</li>
+<li>Safe Drinking Water</li>
+<li>Waste Management</li>
+</ul>
+</section>
+
+<section id="survey">
+<h2>Health Survey</h2>
+
+<select id="q1">
+<option>Do you wash hands daily?</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+
+<select id="q2">
+<option>Do you brush twice daily?</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+
+<select id="q3">
+<option>Do you use dustbin?</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+
+<button onclick="saveSurvey()">Submit Survey</button>
+
+</section>
+
+<section id="analysis">
+<h2>Survey Analysis</h2>
+<canvas id="pieChart"></canvas>
+<canvas id="barChart"></canvas>
+</section>
+
+<script src="chart.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
