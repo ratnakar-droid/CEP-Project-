@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nutri Pro - Health Scanner</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="food-scanner.css">
+</head>
+
+<body>
+
+<header class="scanner-header">
+    <div>
+        <h1>🥗 Nutri Pro</h1>
+        <p>Health Scanner</p>
+    </div>
+
+    <button onclick="toggleDark()">🌙 Dark Mode</button>
+</header>
+
+<nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="food-scanner.html">Health Scanner</a>
+</nav>
+
+<main class="scanner-container">
+
+    <section class="scanner-intro">
+        <h2>🔍 Food Health Scanner</h2>
+
+        <p>
+            Scan a food product to check its nutrition
+            and Nutri Pro Health Score.
+        </p>
+    </section>
+
+
+    <!-- Scanner Options -->
+
+    <section class="scanner-card">
+
+        <div class="scanner-icon">
+            📷
+        </div>
+
+        <h2>Scan Your Food</h2>
+
+        <p>
+            Scan the barcode of a packaged food product
+            to get its nutrition information.
+        </p>
+
+        <button class="scan-button" onclick="startScanner()">
+            📷 Scan Barcode
+        </button>
+
+        <div class="or-divider">
+            <span>OR</span>
+        </div>
+
+        <h3>Enter Barcode Manually</h3>
+
+        <input
+            type="text"
+            id="barcodeInput"
+            placeholder="Enter barcode number"
+            maxlength="20"
+        >
+
+        <button
+            class="manual-button"
+            onclick="searchBarcode()">
+            🔎 Check Product
+        </button>
+
+    </section>
+
+
+    <!-- Scanner Camera Area -->
+
+    <section
+        id="cameraSection"
+        class="camera-section"
+        style="display:none;">
+
+        <h2>📷 Scan Barcode</h2>
+
+        <div id="reader"></div>
+
+        <button
+            class="close-button"
+            onclick="stopScanner()">
+            ✕ Close Scanner
+        </button>
+
+    </section>
+
+
+    <!-- Loading -->
+
+    <section
+        id="loadingSection"
+        class="loading-section"
+        style="display:none;">
+
+        <div class="loading-icon">🔄</div>
+
+        <h2>Checking Product...</h2>
+
+        <p>
+            Getting nutrition information.
+        </p>
+
+    </section>
+
+
+    <!-- Result -->
+
+    <section
+        id="resultSection"
+        class="result-section"
+        style="display:none;">
+
+        <div class="product-header">
+
+            <img
+                id="productImage"
+                src=""
+                alt="Product Image"
+                style="display:none;">
+
+            <div>
+                <h2 id="productName">
+                    Product Name
+                </h2>
+
+                <p id="brandName">
+                    Brand
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Health Score -->
+
+        <div class="health-score">
+
+            <p>Nutri Pro Health Score</p>
+
+            <div
+                id="scoreNumber"
+                class="score-number">
+                -- / 100
+            </div>
+
+            <div
+                id="scoreRating"
+                class="score-rating">
+                Checking...
+            </div>
+
+        </div>
+
+
+        <!-- Nutrition -->
+
+        <h2>📊 Nutrition Information</h2>
+
+        <div class="nutrition-grid">
+
+            <div class="nutrition-item">
+                <span>🔥</span>
+                <strong id="calories">--</strong>
+                <small>Calories</small>
+            </div>
+
+            <div class="nutrition-item">
+                <span>💪</span>
+                <strong id="protein">--</strong>
+                <small>Protein</small>
+            </div>
+
+            <div class="nutrition-item">
+                <span>🍞</span>
+                <strong id="carbs">--</strong>
+                <small>Carbs</small>
+            </div>
+
+            <div class="nutrition-item">
+                <span>🍬</span>
+                <strong id="sugar">--</strong>
+                <small>Sugar</small>
+            </div>
+
+            <div class="nutrition-item">
+                <span>🥑</span>
+                <strong id="fat">--</strong>
+                <small>Fat</small>
+            </div>
+
+            <div class="nutrition-item">
+                <span>🌾</span>
+                <strong id="fiber">--</strong>
+                <small>Fiber</small>
+            </div>
+
+            <div class="nutrition-item">
+                <span>🧂</span>
+                <strong id="sodium">--</strong>
+                <small>Sodium</small>
+            </div>
+
+        </div>
+
+
+        <!-- Why Score -->
+
+        <div class="score-reason">
+
+            <h2>💡 Why This Score?</h2>
+
+            <ul id="scoreReasons">
+                <li>Nutrition information will appear here.</li>
+            </ul>
+
+        </div>
+
+
+        <button
+            class="diet-button"
+            onclick="addToDiet()">
+            ➕ Add To Today's Diet
+        </button>
+
+        <button
+            class="new-scan-button"
+            onclick="newScan()">
+            🔄 Scan Another Product
+        </button>
+
+    </section>
+
+
+    <!-- Error -->
+
+    <section
+        id="errorSection"
+        class="error-section"
+        style="display:none;">
+
+        <h2>⚠️ Product Not Found</h2>
+
+        <p id="errorMessage">
+            We couldn't find this product.
+        </p>
+
+        <button onclick="newScan()">
+            🔄 Try Again
+        </button>
+
+    </section>
+
+</main>
+
+
+<script src="food-scanner.js"></script>
+
+</body>
+</html>
